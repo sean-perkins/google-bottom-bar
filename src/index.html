@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <title>Dev UI Challenge - Week 1 | Google Bottom Bar Navigation</title>
+    <script src="/build/googlebotttombar.js"></script>
+    <style type="text/css" href="/build/googlebotttombar.css"></style>
+    <style type="text/css">
+
+        @import url("https://fonts.googleapis.com/css?family=Open+Sans:700");
+
+        body {
+            background: #5b37b7;
+            color: #010101;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: 'Open Sans', sans-serif;
+            transition: background 0.2s ease-out;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <google-tab-bar>
+        <google-tab-button color="tertiary">
+            <svg slot="icon" viewBox="0 0 100 100">
+                <g transform="translate(10 5) scale(0.8 0.9)">
+                    <path d="M 0 30 v 70 h 100 v -70 l -50 -30 z" stroke="currentColor" stroke-width="10" fill="none"
+                        stroke-linejoin="round" stroke-linecap="round" />
+                </g>
+            </svg>
+            Home
+        </google-tab-button>
+        <google-tab-button color="danger">
+            <svg slot="icon" viewBox="0 0 100 100">
+                <g transform="translate(5 5) scale(0.9 0.9)">
+                    <path d="M 50 35 a 20 20 0 0 1 50 0 q 0 25 -50 60 q -50 -35 -50 -60 a 25 25 0 0 1 50 0" stroke="currentColor"
+                        stroke-width="10" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+                </g>
+            </svg>
+            Likes
+        </google-tab-button>
+        <google-tab-button color="warning">
+            <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            Search
+        </google-tab-button>
+        <google-tab-button color="primary">
+            <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Profile
+        </google-tab-button>
+    </google-tab-bar>
+
+    <script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const tabBar = document.querySelector('google-tab-bar');
+        tabBar.addEventListener('tabChange', function(event) {
+            let background;
+            switch (event.detail.color) {
+                case 'primary':
+                    background = '#1795AA';
+                    break;
+                case 'tertiary':
+                    background = '#5E3CB8';
+                    break;
+                case 'warning':
+                    background = '#ECA804';
+                    break;
+                case 'danger':
+                    background = '#C8389E';
+                    break;
+            }
+            document.querySelector('body').style.background = background;
+        });
+    });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+.color {
+    &-primary {
+        --background: #D0EBEF;
+        --color: #1795AA;
+    }
+    &-tertiary {
+        --background: #DED7F3;
+        --color: #5E3CB8;
+    }
+    &-warning {
+        --background: #FCF3DA;
+        --color: #ECA804;
+    }
+    &-danger {
+        --color: #C8389E;
+        --background: #F6D6EE;
+    }
+}
+
+:host(.active) {
+    .tab-button {
+        color: var(--color);
+        background: var(--background);
+        &-icon {
+            margin-right: 0;
+        }
+        &-text {
+            visibility: visible;
+            opacity: 1;
+            transition: all 0.2s ease-out;
+        }
+
+        &:before {
+            background: var(--background);
+            opacity: 0;
+            visibility: hidden;
+            transform: translate(0%, -50%) scale(2);
+            transition: all 0.4s ease-out;
+        }
+    }
+}
+
+.tab-button {
+    text-decoration: none;
+    margin: 0 0.2rem;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    &-icon {
+        margin-right: -2.5rem;
+        width: 28px;
+        height: 28px;
+        pointer-events: none;
+        transition: margin 0.2s ease-out;
+    }
+    &-text {
+        opacity: 0;
+        visibility: hidden;
+        font-size: 0.9rem;
+        margin-left: 0.9rem;
+    }
+    &:before {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 0;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        transform: translate(0%, -50%) scale(0);
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@media(max-width: 500px) {
+    .tab-button {
+        margin: 0.5rem 0;
+        &-icon {
+            margin: 0;
+        }
+    }
+}
