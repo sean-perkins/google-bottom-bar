@@ -1,8 +1,5 @@
 # Google Bottom Bar
 
-### Animations
-When toggling between the active tabs, the following sequences of animations occur:
-1. The activated tab text fades in
-2. The activated tab text translates left 5px
-3. The activated tab text transitions colors from black to the designated color
-4. The activated tab expands from a circle to a pill shape
+Web component implementation of Google's bottom bar. Based on the following animation:
+
+![Image](https://cdn.dribbble.com/users/30252/screenshots/5925052/tab-ui-final.gif)
