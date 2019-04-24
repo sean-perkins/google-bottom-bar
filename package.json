@@ -1,9 +1,9 @@
 {
   "name": "google-bottom-bar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
-  "unpkg": "dist/ionic.js",
+  "unpkg": "dist/googlebottombar.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
